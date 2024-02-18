@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function HistoryItem(props) {
   return (
     <View style={styles.item}>
-      <Text style={styles.text}>{props.time}</Text>
-      <Text style={styles.text}>{props.level}</Text>
+      <Text style={styles.text}>{props.time} </Text>
+      <Text style={styles.text}> {props.level}%</Text>
     </View>
   );
 }
