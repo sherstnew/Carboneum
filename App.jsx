@@ -12,8 +12,8 @@ import HistoryItem from './components/HistoryItem';
 import { useState, useEffect } from 'react';
 
 export default function App() {
-  const [loaderVisible, setLoaderVisible] = useState(false);
-  const [CO2Level, setCO2Level] = useState(0);
+  // const [loaderVisible, setLoaderVisible] = useState(false);
+  const [CO2Level, setCO2Level] = useState(-1);
   const [history, setHistory] = useState([]);
 
   const clearHistory = async () => {
@@ -22,12 +22,13 @@ export default function App() {
   };
 
   const reload = () => {
-    setLoaderVisible(true);
-    fetch('http://192.168.0.148')
+    // setLoaderVisible(true);
+    // fetch('http://192.168.0.148')
+    fetch('http://192.168.4.1')
       .then((data) => data.text())
       .then((level) => {
         setCO2Level(level);
-        setLoaderVisible(false);
+        // setLoaderVisible(false);
         AsyncStorage.getItem('history').then((value) => {
           value = JSON.parse(value);
           if (value !== null) {
